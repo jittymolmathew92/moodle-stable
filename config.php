@@ -195,7 +195,7 @@ $CFG->wwwrootendsinpublic = true;
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = 'C:\\moodledata';
+$CFG->dataroot  = 'C:\\moodledatatest';
 
 // Whether the Moodle router is fully configured.
 //
