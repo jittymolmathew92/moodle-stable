@@ -162,7 +162,6 @@ function install_init_dataroot($dataroot, $dirpermissions) {
  * @return string
  */
 function install_db_validate($database, $dbhost, $dbuser, $dbpass, $dbname, $prefix, $dboptions) {
-    echo '\n ins install_db_validate';
     if (!preg_match('/^[a-z_]*$/', $prefix)) {
         return get_string('invaliddbprefix', 'install');
     }

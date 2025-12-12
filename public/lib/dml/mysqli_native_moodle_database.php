@@ -66,7 +66,6 @@ class mysqli_native_moodle_database extends moodle_database {
      * @throws dml_exception A DML specific exception is thrown for any errors.
      */
     public function create_database($dbhost, $dbuser, $dbpass, $dbname, ?array $dboptions=null) {
-        echo '\n ins create_database';
         $driverstatus = $this->driver_installed();
 
         if ($driverstatus !== true) {

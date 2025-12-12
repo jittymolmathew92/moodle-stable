@@ -41,10 +41,10 @@ $CFG = new stdClass();
 $CFG->dbtype    = 'mysqli';                  // 'pgsql', 'mariadb', 'mysqli', 'auroramysql', or 'sqlsrv'
 $CFG->dblibrary = 'native';                 // 'native' only at the moment
 $CFG->dbhost    = 'localhost';              // eg 'localhost' or 'db.isp.com' or IP
-$CFG->dbname    = 'moodle';                 // database name, eg moodle
+$CFG->dbname    = 'moodle_test';                 // database name, eg moodle
 $CFG->dbuser    = 'root';               // your database username
 $CFG->dbpass    = 'Moodle@123#';               // your database password
-$CFG->prefix    = 'gbs_';                   // prefix to use for all table names
+$CFG->prefix    = 'mdl_';                   // prefix to use for all table names
 $CFG->dboptions = [
     'dbpersist' => false,                   // Should persistent database connections be
                                             //   used? Set to 'false' for the most stable
@@ -57,7 +57,6 @@ $CFG->dboptions = [
                                             //   if dbhost is 'localhost' - if you need
                                             //   local port connection use '127.0.0.1')
     'dbport'    => '3309',                      // The TCP port number to use when connecting
-                                            // X Protocol port - 33090
                                             //   to the server. Keep empty string for the
                                             //   default port
     'dbhandlesoptions' => false,            // On PostgreSQL poolers like pgbouncer don't
@@ -174,14 +173,14 @@ $CFG->dboptions = [
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot   = 'http://localhost/moodle';
+$CFG->wwwroot   = 'http://localhost/moodle-test/public';
 
 // Generally it is not advisable to use a wwwroot that ends in 'public'.
 // This is because the 'public' directory is used to serve web-accessible content.
 // Moodle looks for any URL which ends in 'public' and assumes that it is a misconfiguration.
 // In the event that there is a need to have a wwwroot that ends in 'public', the
 // following setting can be used to override this check.
-$CFG->wwwrootendsinpublic = false;
+$CFG->wwwrootendsinpublic = true;
 
 //=========================================================================
 // 3. DATA FILES LOCATION
@@ -196,7 +195,7 @@ $CFG->wwwrootendsinpublic = false;
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot = 'C:\\moodledata';
+$CFG->dataroot  = 'C:\\moodledata';
 
 // Whether the Moodle router is fully configured.
 //

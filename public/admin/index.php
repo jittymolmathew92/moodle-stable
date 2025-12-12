@@ -32,7 +32,6 @@ if (!file_exists('../config.php')) {
 require_once(__DIR__ . '/../lib/phpminimumversionlib.php');
 moodle_require_minimum_php_version();
 
-
 // Make sure iconv is available and actually works.
 if (!function_exists('iconv')) {
     // This should not happen, this must be very borked install.
@@ -40,7 +39,6 @@ if (!function_exists('iconv')) {
     die();
 }
 
-print_r(!extension_loaded('xml'));
 // Make sure xml extension is available.
 if (!extension_loaded('xml')) {
     echo 'Moodle requires the xml PHP extension. Please install or enable the xml extension.';
@@ -163,6 +161,7 @@ if ($newaddonreq && !$cache && empty($CFG->disableupdateautodeploy)) {
 }
 
 $PAGE->set_pagelayout('admin'); // Set a default pagelayout.
+
 $documentationlink = '<a href="http://docs.moodle.org/en/Installation">Installation docs</a>';
 
 // Check some PHP server settings.
@@ -286,6 +285,7 @@ if (!core_tables_exist()) {
     install_core($version, true);
 }
 
+
 // Check version of Moodle code on disk compared with database
 // and upgrade if possible.
 
@@ -298,6 +298,7 @@ if (!$cache) {
 
 $stradministration = get_string('administration');
 $PAGE->set_context(context_system::instance());
+
 if (empty($CFG->version)) {
     throw new \moodle_exception('missingconfigversion', 'debug');
 }
@@ -834,6 +835,7 @@ if (has_capability('moodle/site:config', context_system::instance())) {
 if (!$cache) {
     redirect(new moodle_url('/admin/index.php', ['cache' => 1]));
 }
+
 // Check for valid admin user - no guest autologin.
 require_login(0, false);
 if (isguestuser()) {
@@ -985,6 +987,7 @@ $xmlrpcwarning = !is_null($result) ? get_string($result->getFeedbackStr(), 'admi
 admin_externalpage_setup('adminnotifications');
 
 $output = $PAGE->get_renderer('core', 'admin');
+
 echo $output->admin_notifications_page(
     $maturity,
     $insecuredataroot,

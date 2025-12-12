@@ -88,10 +88,7 @@ class dml_connection_exception extends dml_exception {
      * @param string $error Optional debugging information.
      */
     function __construct($error) {
-        echo ' ins dml_connection_exception';
         $errorinfo = $error;
-        echo ' new jit';
-        print_r($error);
         parent::__construct('dbconnectionfailed', NULL, $errorinfo);
     }
 }

@@ -152,7 +152,6 @@ class auth_plugin_db extends auth_plugin_base {
      * @throws moodle_exception
      */
     function db_init() {
-        echo '\n ins db_init';
         if ($this->is_configured() === false) {
             throw new moodle_exception('auth_dbcantconnect', 'auth_db');
         }

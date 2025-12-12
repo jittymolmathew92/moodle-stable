@@ -267,7 +267,6 @@ abstract class moodle_database {
      * @return stdClass
      */
     public function export_dbconfig() {
-        echo 'start export_dbconfig';
         $cfg = new stdClass();
         $cfg->dbtype    = $this->get_dbtype();
         $cfg->dblibrary = $this->get_dblibrary();
@@ -280,7 +279,6 @@ abstract class moodle_database {
             $cfg->dboptions = $this->dboptions;
         }
 
-        print_r($cfg);
         return $cfg;
     }
 
